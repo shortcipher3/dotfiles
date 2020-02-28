@@ -16,3 +16,9 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
+
+# support local configuration
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
+

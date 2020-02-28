@@ -36,4 +36,8 @@ export PROMPT_COMMAND='history -a'
 export PS1="[\$(date +%m-%d) \t \l][\u \W]\$ " # show how long a shell has been open and see how long long running commands take
 export PROMPT_HISTORY="\!,\l,\$?\$ "
 
+# support local configuration
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
 

@@ -1,0 +1,4 @@
+
+# support local configuration
+[include]
+    path = ~/.gitconfig_local
