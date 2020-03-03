@@ -17,6 +17,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
 
+# vim mode
+bindkey -v
+export EDITOR=vim
+
 # support local configuration
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local

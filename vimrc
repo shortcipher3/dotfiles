@@ -24,6 +24,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'rust-lang/rust.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'mileszs/ack.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -123,23 +125,27 @@ filetype plugin indent on
 " colorscheme apprentice
 
 set autoindent		" always set autoindenting on
-set expandtab tabstop=4 shiftwidth=4
-imap ii <Esc>
+set expandtab tabstop=4 shiftwidth=4 " use spaces in place of tab
 
 let g:slime_target = "tmux"
 
 let python_highlight_all=1
+" color scheme based on whether in a gui or terminal
 if has('gui_running')
   set background=dark
   colorscheme solarized
 else
   colorscheme zenburn
 endif
+" tree explorer plugin for navigating in vim
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+" syntax checking for python
 let g:syntastic_python_checkers = ['pyflakes', 'mypy', 'pylint'] " flake8, pyflakes, pylint
 
+" run rustfmt automatically
 let g:rustfmt_autosave = 1
 
+" fast alternative to pressing escape
 imap jj <Esc>
 
 " Show line numbers.
@@ -187,6 +193,70 @@ set noerrorbells visualbell t_vb=
 " Enable mouse support. You should avoid relying on this too much, but it can
 " sometimes be convenient.
 set mouse+=a
+
+" CtrlP settings
+" Order matching files top to bottom
+let g:ctrlp_match_window = 'bottom,order:ttb'
+" Always open files in new buffers
+let g:ctrlp_switch_buffer = 0
+" Lets us change the working directory during a Vim session and make CtrlP
+" respect that change.
+let g:ctrlp_working_path_mode = 0
+" Use rg to search instead
+" https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
+
+" Ignore files for completion
+set wildignore+=*/.git/*,*/tmp/*,*.swp
+ 
+" CtrlP buffer remap
+" nnoremap ; :CtrlPBuffer<CR>
+
+" show hidden files
+let g:ctrlp_show_hidden = 1
+
+" Custom Functions
+" toggle between number and relativenumber
+function! ToggleNumber()
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+" strips trailing whitespace at the end of files. this
+" is called on buffer write in the autogroup above.
+function! <SID>StripTrailingWhitespaces()
+    " save last search & cursor position
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+
+nnoremap <leader>t :call ToggleNumber()<CR>
+nnoremap <leader>s :call <SID>StripTrailingWhitespaces()<CR>
+
+" incsearch-easymotion
+" map <Space> <Plug>(easymotion-prefix)
+" map z/ <Plug>(incsearch-easymotion-/)
+" map z? <Plug>(incsearch-easymotion-?)
+" map zg/ <Plug>(incsearch-easymotion-stay)
+
+" Use uppercase target labels and type as a lower case
+" let g:EasyMotion_use_upper = 1
+" let g:EasyMotion_keys = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ;'
+
+""nmap dl set nonu nornu
 
 " support local configuration
 let $LOCALFILE=expand("~/.vimrc_local")
