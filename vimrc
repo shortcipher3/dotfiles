@@ -246,6 +246,7 @@ endfunction
 nnoremap <leader>t :call ToggleNumber()<CR>
 nnoremap <leader>s :call <SID>StripTrailingWhitespaces()<CR>
 
+set paste
 " incsearch-easymotion
 " map <Space> <Plug>(easymotion-prefix)
 " map z/ <Plug>(incsearch-easymotion-/)

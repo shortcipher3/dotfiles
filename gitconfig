@@ -1,4 +1,19 @@
 
+# aliases
+[alias]
+	graph = log --all --graph --decorate --oneline
+
+[core]
+	excludesfile = /home/chris.hall/.gitignore_global
+
+## sign commits - set key
+#[gpg]
+#	program = /usr/bin/gpg2
+#[commit]
+#	gpgsign = true
+#[user]
+#	signingkey =
+
 # support local configuration
 [include]
     path = ~/.gitconfig_local

@@ -45,11 +45,18 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
+# special prompt for git repos
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+
+# vim mode for bash
+#set -o vi
+#export EDITOR=vim
+set -o emacs
+
 # support local configuration
 if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
-
-# vim mode for bash
-set -o vi
-export EDITOR=vim
