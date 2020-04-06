@@ -18,8 +18,14 @@ SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
 
 # vim mode
-bindkey -v
-export EDITOR=vim
+#bindkey -v
+#export EDITOR=vim
+
+# fancy prompt for git repo
+#if [ -f "$HOME/.zsh-git-prompt/zshrc.sh" ]; then
+#    GIT_PROMPT_ONLY_IN_REPO=1
+#    source $HOME/.zsh-git-prompt/zshrc.sh
+#fi
 
 # support local configuration
 if [ -f ~/.zshrc_local ]; then

@@ -289,10 +289,11 @@
 #c.TerminalInteractiveShell.display_completions = 'multicolumn'
 
 ## Shortcut style to use at the prompt. 'vi' or 'emacs'.
-c.TerminalInteractiveShell.editing_mode = 'vi'
+#c.TerminalInteractiveShell.editing_mode = 'vi'
+c.TerminalInteractiveShell.editing_mode = 'emacs'
 
 ## Set the editor used by IPython (default to $EDITOR/vi/notepad).
-c.TerminalInteractiveShell.editor = 'vi'
+#c.TerminalInteractiveShell.editor = 'vi'
 
 ## Allows to enable/disable the prompt toolkit history search
 #c.TerminalInteractiveShell.enable_history_search = True
@@ -321,7 +322,7 @@ c.TerminalInteractiveShell.editor = 'vi'
 #c.TerminalInteractiveShell.mouse_support = False
 
 ## Display the current vi mode (when using vi editing mode).
-c.TerminalInteractiveShell.prompt_includes_vi_mode = True
+#c.TerminalInteractiveShell.prompt_includes_vi_mode = True
 
 ## Class used to generate Prompt token for prompt_toolkit
 #c.TerminalInteractiveShell.prompts_class = 'IPython.terminal.prompts.Prompts'
