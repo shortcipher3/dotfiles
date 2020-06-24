@@ -61,3 +61,5 @@ if [ -f ~/.bashrc_local ]; then
     source ~/.bashrc_local
 fi
 
+MANPATH=$MANPATH:$HOME/share/man
+. `which env_parallel.bash`
