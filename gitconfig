@@ -5,6 +5,7 @@
 
 [core]
 	excludesfile = /home/chris.hall/.gitignore_global
+	autocrlf = input
 
 ## sign commits - set key
 #[gpg]
