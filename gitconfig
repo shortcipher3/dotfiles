@@ -18,3 +18,8 @@
 # support local configuration
 [include]
     path = ~/.gitconfig_local
+[mergetool]
+	prompt = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
