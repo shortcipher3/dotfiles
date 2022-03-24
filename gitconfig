@@ -6,6 +6,7 @@
 [core]
 	excludesfile = /home/chris.hall/.gitignore_global
 	autocrlf = input
+	editor = vim
 
 ## sign commits - set key
 #[gpg]
@@ -23,3 +24,6 @@
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
+[user]
+	email = chris.hall@vivint.com
+	name = chris.hall
