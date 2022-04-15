@@ -1,12 +1,12 @@
 # Load Antigen
-source ~/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 # Load Antigen configurations
-antigen init .antigenrc
+antigen init ~/.antigenrc
 
 # The following lines were added by compinstall
 
 zstyle ':completion:*' list-colors ''
-zstyle :compinstall filename '/home/chris.hall/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -19,13 +19,19 @@ SAVEHIST=10000
 
 # vim mode
 #bindkey -v
-#export EDITOR=vim
 
 # fancy prompt for git repo
 #if [ -f "$HOME/.zsh-git-prompt/zshrc.sh" ]; then
 #    GIT_PROMPT_ONLY_IN_REPO=1
 #    source $HOME/.zsh-git-prompt/zshrc.sh
 #fi
+
+export EDITOR=vim
+set -o emacs
+
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+source virtualenvwrapper.sh
 
 # support local configuration
 if [ -f ~/.zshrc_local ]; then

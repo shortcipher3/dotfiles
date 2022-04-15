@@ -53,8 +53,12 @@ fi
 
 # vim mode for bash
 #set -o vi
-#export EDITOR=vim
+export EDITOR=vim
 set -o emacs
+
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+source virtualenvwrapper.sh
 
 # support local configuration
 if [ -f ~/.bashrc_local ]; then

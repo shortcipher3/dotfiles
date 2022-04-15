@@ -13,4 +13,5 @@ mkdir -p ~/.ssh
 ln -s ${BASEDIR}/.ssh/authorized_keys ~/.ssh/authorized_keys
 mkdir -p ~/.ipython/profile_default/
 ln -s ${BASEDIR}/ipython_config.py ~/.ipython/profile_default/ipython_config.py
+ln -s ${BASEDIR}/antigenrc ~/.antigenrc
 
