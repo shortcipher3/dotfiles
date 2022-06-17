@@ -15,3 +15,8 @@ mkdir -p ~/.ipython/profile_default/
 ln -s ${BASEDIR}/ipython_config.py ~/.ipython/profile_default/ipython_config.py
 ln -s ${BASEDIR}/antigenrc ~/.antigenrc
 
+if [ $(uname) = "Darwin" ]; then
+  mkdir -p ~/Library/Application Support/Code/User
+  rm -f ~/Library/Application Support/Code/User/settings.json
+  ln -s ${BASEDIR}/vscode/settings.json ~/Library/Application Support/Code/User/settings.json
+fi
