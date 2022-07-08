@@ -1,7 +1,18 @@
 # Load Antigen
-source $(brew --prefix)/share/antigen/antigen.zsh
+if [ $(uname -s) = "Linux" ]; then
+  source ~/antigen.zsh
+else
+  #export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+  source $(brew --prefix)/share/antigen/antigen.zsh
+fi
+
 # Load Antigen configurations
-antigen init ~/.antigenrc
+if [ -f ~/.antigenrc ]; then
+    source ~/.antigenrc
+fi
+
+#plugins=(dotenv)
+#ZSH_DOTENV_PROMPT=false
 
 # The following lines were added by compinstall
 
@@ -30,7 +41,6 @@ export EDITOR=vim
 set -o emacs
 
 export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
 source virtualenvwrapper.sh
 
 # support local configuration
