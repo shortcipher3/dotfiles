@@ -28,9 +28,9 @@
 	defaultBranch = main
 [diff]
 	submodule = log
-[includeif "gitdir=/home/chris.hall/code/shortcipher3/"]
-    path = /home/chris.hall/code/shortcipher3/.gitconfig
-[includeif "gitdir=/home/chris.hall/code/repos/"]
-    path = /home/chris.hall/code/repos/.gitconfig
+[includeIf "gitdir:~/code/shortcipher3/"]
+    path = ~/code/shortcipher3/.gitconfig
+[includeIf "gitdir:~/code/repos/"]
+    path = ~/code/repos/.gitconfig
 
 # Note these git configs are my personl and work, also committed here
