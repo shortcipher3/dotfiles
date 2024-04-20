@@ -1,0 +1,6 @@
+[user]
+	email = chris.jon.hall@gmail.com
+	name = shortcipher3
+
+[core]
+  sshCommand = ssh -i ~/.ssh/id_ed25519

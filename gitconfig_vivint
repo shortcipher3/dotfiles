@@ -1,0 +1,6 @@
+[user]
+	email = chris.hall@vivint.com
+	name = chris.hall
+
+[core]
+  sshCommand = ssh -i ~/.ssh/id_ed25519

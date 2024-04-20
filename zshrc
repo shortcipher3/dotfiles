@@ -23,10 +23,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.zhistory
 HISTSIZE=10000
 SAVEHIST=10000
 # End of lines configured by zsh-newuser-install
+
+setopt inc_append_history_time
 
 # vim mode
 #bindkey -v
@@ -48,3 +50,5 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
+#export TERM=xterm-256color
+export TERM="screen-256color"

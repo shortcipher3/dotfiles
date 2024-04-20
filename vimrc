@@ -132,10 +132,13 @@ let g:slime_target = "tmux"
 let python_highlight_all=1
 " color scheme based on whether in a gui or terminal
 if has('gui_running')
-  set background=dark
+  "set background=dark
   colorscheme solarized
 else
-  colorscheme zenburn
+  "set background=dark
+  "colorscheme zenburn
+  colorscheme solarized
+  "colorscheme apprentice
 endif
 " tree explorer plugin for navigating in vim
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
@@ -265,4 +268,13 @@ if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
 
+call plug#begin('~/.vim/plugged')
+    Plug 'altercation/vim-colors-solarized'
+call plug#end()
+
+let g:solarized_termcolors=256
+set t_Co=256
+syntax enable
+set background=dark
+colorscheme solarized
 

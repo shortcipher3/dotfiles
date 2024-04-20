@@ -24,6 +24,13 @@
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
-[user]
-	email = chris.hall@vivint.com
-	name = chris.hall
+[init]
+	defaultBranch = main
+[diff]
+	submodule = log
+[includeif "gitdir=/home/chris.hall/code/shortcipher3/"]
+    path = /home/chris.hall/code/shortcipher3/.gitconfig
+[includeif "gitdir=/home/chris.hall/code/repos/"]
+    path = /home/chris.hall/code/repos/.gitconfig
+
+# Note these git configs are my personl and work, also committed here
